@@ -1,1 +1,43 @@
-<h1>hello world!</h1>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>price comparer</h1>
+
+  <label for="item1">item 1: </label>
+  <label for="price1">$ </label>
+  <input type="text" id="price1" name="price1" size="5">
+
+  <input type="text" id="amount1" name="amount1" size="5">
+  <label for="amount1">things </label><br><br>
+
+
+  <label for="item2">item 2: </label>
+  <label for="price2">$ </label>
+  <input type="text" id="price2" name="price2" size="5">
+
+  <input type="text" id="amount2" name="amount2" size="5">
+  <label for="amount2">things </label><br><br>
+
+
+  <button onclick="compare()">compare!</button><br><br>
+  <!--<button type="reset">clear</button><br><br>-->
+  <div id="result"></div>
+
+  <script type="text/javascript">
+  	function compare() {
+    	let result = document.getElementById('result');
+    	let costPerThing1 = document.getElementById('price1').value / document.getElementById('amount1').value;
+        let costPerThing2 = document.getElementById('price2').value / document.getElementById('amount2').value;
+        if (costPerThing1 < costPerThing2) {
+        	result.innerText = "item 1 is cheaper!";
+        } else if (costPerThing2 < costPerThing1) {
+        	result.innerText = "item 2 is cheaper!";
+        } else {
+        	result.innerText = "same price!";
+        }
+    }
+  </script>
+
+</body>
+</html>
